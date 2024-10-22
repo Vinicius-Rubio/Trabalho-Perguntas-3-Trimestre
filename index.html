@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Carros Brasileiros</title>
+    <link rel="stylesheet" href="style.css"> <!-- link para o seu arquivo CSS -->
+    <script>
+    // Função para verificar a resposta selecionada
+    function verificarResposta(pergunta, respostaCorreta) {
+        var respostaSelecionada = document.querySelector(`input[name="${pergunta}"]:checked`);
+        var elementoResultado = document.getElementById(`${pergunta}Resultado`);
+
+        // Verifica se uma resposta foi selecionada
+        if (!respostaSelecionada) {
+            elementoResultado.textContent = "Por favor, selecione uma resposta!";
+            elementoResultado.style.color = "orange"; // Cor laranja para aviso
+            return;
+        }
+
+        // Obtém o valor da resposta escolhida
+        var respostaValue = respostaSelecionada.value;
+
+        // Comparação da resposta escolhida com a correta
+        if (respostaValue === respostaCorreta) {
+            elementoResultado.textContent = "Correto!";
+            elementoResultado.style.color = "green"; // Cor verde para resposta correta
+        } else {
+            elementoResultado.textContent = "Incorreto. A resposta correta é " + respostaCorreta;
+            elementoResultado.style.color = "red"; // Cor vermelha para resposta incorreta
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Quiz de Carros Brasileiros</h1>
+
+    <!-- Perguntas do quiz -->
+    <div class="pergunta">
+        <p>Qual marca de carro brasileira é conhecida por seus carros esportivos?</p>
+        <ul>
+            <li><input type="radio" name="q1" value="A" id="q1A"> A) Volkswagen</li>
+            <li><input type="radio" name="q1" value="B" id="q1B"> B) Fiat</li>
+            <li><input type="radio" name="q1" value="C" id="q1C"> C) Puma</li>
+            <li><input type="radio" name="q1" value="D" id="q1D"> D) Chevrolet</li>
+        </ul>
+        <p id="q1Resultado"></p>
+        <button onclick="verificarResposta('q1', 'C')">Verificar Resposta</button>
+    </div>
+
+    <div class="pergunta">
+        <p>Qual dos seguintes carros é um modelo popular no Brasil?</p>
+        <ul>
+            <li><input type="radio" name="q2" value="A" id="q2A"> A) Gol</li>
+            <li><input type="radio" name="q2" value="B" id="q2B"> B) Palio</li>
+            <li><input type="radio" name="q2" value="C" id="q2C"> C) Corsa</li>
+            <li><input type="radio" name="q2" value="D" id="q2D"> D) Uno</li>
+        </ul>
+        <p id="q2Resultado"></p>
+        <button onclick="verificarResposta('q2', 'A')">Verificar Resposta</button>
+    </div>
+
+    <div class="pergunta">
+        <p>Qual marca de carro brasileira é uma subsidiária da Fiat Chrysler Automobiles (FCA)?</p>
+        <ul>
+            <li><input type="radio" name="q3" value="A" id="q3A"> A) Volkswagen</li>
+            <li><input type="radio" name="q3" value="B" id="q3B"> B) Fiat</li>
+            <li><input type="radio" name="q3" value="C" id="q3C"> C) Chevrolet</li>
+            <li><input type="radio" name="q3" value="D" id="q3D"> D) Toyota</li>
+        </ul>
+        <p id="q3Resultado"></p>
+        <button onclick="verificarResposta('q3', 'B')">Verificar Resposta</button>
+    </div>
+
+    <div class="pergunta">
+        <p>Qual modelo de carro é conhecido por sua robustez e é popular em áreas rurais do Brasil?</p>
+        <ul>
+            <li><input type="radio" name="q4" value="A" id="q4A"> A) Troller T4</li>
+            <li><input type="radio" name="q4" value="B" id="q4B"> B) Volkswagen Fox</li>
+            <li><input type="radio" name="q4" value="C" id="q4C"> C) Fiat Toro</li>
+            <li><input type="radio" name="q4" value="D" id="q4D"> D) Chevrolet S10</li>
+        </ul>
+        <p id="q4Resultado"></p>
+        <button onclick="verificarResposta('q4', 'A')">Verificar Resposta</button>
+    </div>
+
+    <div class="pergunta">
+        <p>Qual carro da Chevrolet foi um dos mais vendidos no Brasil por sua acessibilidade e economia?</p>
+        <ul>
+            <li><input type="radio" name="q5" value="A" id="q5A"> A) Celta</li>
+            <li><input type="radio" name="q5" value="B" id="q5B"> B) Onix</li>
+            <li><input type="radio" name="q5" value="C" id="q5C"> C) Spin</li>
+            <li><input type="radio" name="q5" value="D" id="q5D"> D) Tracker</li>
+        </ul>
+        <p id="q5Resultado"></p>
+        <button onclick="verificarResposta('q5', 'A')">Verificar Resposta</button>
+    </div>
+
+    <div class="pergunta">
+        <p>Qual desses modelos é um dos primeiros utilitários esportivos (SUV) fabricados pela Fiat no Brasil?</p>
+        <ul>
+            <li><input type="radio" name="q6" value="A" id="q6A"> A) Toro</li>
+            <li><input type="radio" name="q6" value="B" id="q6B"> B) Strada</li>
+            <li><input type="radio" name="q6" value="C" id="q6C"> C) Fiorino</li>
+            <li><input type="radio" name="q6" value="D" id="q6D"> D) Doblo</li>
+        </ul>
+        <p id="q6Resultado"></p>
+        <button onclick="verificarResposta('q6', 'A')">Verificar Resposta</button>
+    </div>
+</body>
+</html>
